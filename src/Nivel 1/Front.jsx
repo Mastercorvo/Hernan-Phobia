@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
 function Front ({inputText, outputText, writing}){
@@ -16,6 +16,8 @@ function Front ({inputText, outputText, writing}){
 
     function onClickControl(){
 
+      if(writing.current) return false;
+
       inputText({text:'— [INFO] Un control de super play.', speed: 'insta'});
       outputText()
 
@@ -23,7 +25,49 @@ function Front ({inputText, outputText, writing}){
 
     function onClickAlfombra () {
 
+      if(writing.current) return false;
+
       inputText({text:'— [INFO] Una alfombra.', speed: 'insta'});
+      outputText()
+      
+    }
+
+    function onClickCajon1(){
+
+      if(writing.current) return false;
+
+      inputText({text:'— [INFO] Este cajón está vacio', speed: 'insta'});
+      outputText()
+
+    }
+
+    const llave1 = useRef(false);
+
+    function onClickCajon2(){
+
+      if(writing.current) return false;
+
+      if(!llave1.current){
+
+        inputText({text:'— [INFO] Este cajón tiene una llave.'});
+        inputText({text:'*Llave obtenida*'});
+        outputText();
+        llave1.current = true;
+
+      }else{
+
+        inputText({text:'— [INFO] Este cajón está vacio', speed:'insta'});
+        outputText();
+
+      }
+
+    }
+
+    function onClickCajon3(){
+
+      if(writing.current) return false;
+
+      inputText({text:'— [INFO] Este cajón es algo peculiar.'});
       outputText()
 
     }
@@ -35,8 +79,8 @@ function Front ({inputText, outputText, writing}){
       if(!writing.current){
 
         if (pc === 0) {
-          inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.', speed: 'insta'});
-          inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.', speed: 'insta'});
+          inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.'});
+          inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.'});
           outputText();
           setPc(1)
         }else{
@@ -45,7 +89,6 @@ function Front ({inputText, outputText, writing}){
           outputText();
           
         }
-
 
       }
 
@@ -242,6 +285,7 @@ function Front ({inputText, outputText, writing}){
         ></path>
         <g
           id="cajon1"
+          onClick={onClickCajon1}
           strokeDasharray="none"
           strokeDashoffset="0"
           strokeLinecap="round"
@@ -251,7 +295,7 @@ function Front ({inputText, outputText, writing}){
         >
           <path
             id="rect1047"
-            fill="none"
+            fill="#6b3c00"
             stroke="#000"
             strokeWidth="1.408"
             d="M-91.318 91.108H-29.940999999999995V112.908H-91.318z"
@@ -268,6 +312,7 @@ function Front ({inputText, outputText, writing}){
         </g>
         <g
           id="cajon2"
+          onClick={onClickCajon2}
           strokeDasharray="none"
           strokeDashoffset="0"
           strokeLinecap="round"
@@ -277,7 +322,7 @@ function Front ({inputText, outputText, writing}){
         >
           <path
             id="rect1047-4"
-            fill="none"
+            fill="#6b3c00"
             stroke="#000"
             strokeWidth="1.408"
             d="M-91.318 119.333H-29.940999999999995V141.133H-91.318z"
@@ -294,6 +339,7 @@ function Front ({inputText, outputText, writing}){
         </g>
         <g
           id="cajon3"
+          onClick={onClickCajon3}
           strokeDasharray="none"
           strokeDashoffset="0"
           strokeLinecap="round"
@@ -303,7 +349,7 @@ function Front ({inputText, outputText, writing}){
         >
           <path
             id="rect1047-6"
-            fill="none"
+            fill="#6b3c00"
             stroke="#000"
             strokeWidth="1.408"
             d="M-91.318 147.559H-29.940999999999995V169.359H-91.318z"

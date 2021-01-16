@@ -97,6 +97,8 @@ function LevelOne(){
 
                         forceText.current = 0;
 
+                        if(arrayTexts.current.length === 0) hiddenCount.current = 1;
+
                     }
 
                 }, i * speed);
@@ -110,8 +112,6 @@ function LevelOne(){
     }
 
     function outputText(){
-
-        console.log(forceText.current, 'current initial');
 
         if(forceText.current === 0){
 
