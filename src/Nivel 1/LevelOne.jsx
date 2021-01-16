@@ -18,6 +18,10 @@ function LevelOne(){
 
     const [showText, setShowText] = useState(false);
 
+    const forceText = useRef(0);
+
+    const oldText = useRef('');
+
     function escribir(DATA){
 
         currentIdText.current += 1;
@@ -32,7 +36,6 @@ function LevelOne(){
 
         if(!text) text = '';
         if(!speed) speed = 40;
-        if(speed === 'insta') speed = 0
         if(!wait) wait = 0;
         if(!replace) replace = true;
 
@@ -44,7 +47,21 @@ function LevelOne(){
 
         if(text) setShowText(()=>true);
 
-        if(text) writing.current = true
+        if(text) writing.current = true;
+
+        oldText.current = text;
+
+        if(speed === 'insta'){
+
+            setTEXT(text);
+
+            if(arrayTexts.current.length === 0) hiddenCount.current = 1;
+
+            forceText.current = 0;
+            
+            return false;
+
+        }
 
         for(let i = 0; (wait/300) > i; i++){
 
@@ -73,9 +90,15 @@ function LevelOne(){
                     if(ID === currentIdText.current){
     
                         setTEXT(v=> v+text[i]);
+                        
+                    }
+                    
+                    if((i === (text.length-1)) && (ID === currentIdText.current)){
+
+                        forceText.current = 0;
 
                     }
-    
+
                 }, i * speed);
     
             }
@@ -88,13 +111,28 @@ function LevelOne(){
 
     function outputText(){
 
-        const COPY = [...arrayTexts.current];
+        console.log(forceText.current, 'current initial');
 
-        const currentText = COPY.shift();
+        if(forceText.current === 0){
 
-        escribir(currentText);
+            const COPY = [...arrayTexts.current];
+    
+            const currentText = COPY.shift();
+    
+            arrayTexts.current = [...COPY];
+            
+            forceText.current = 1;
+            
+            escribir(currentText);
+        }else{
 
-        arrayTexts.current = [...COPY]
+            currentIdText.current += 1;
+
+            setTEXT(()=>oldText.current)
+
+            forceText.current = 0;
+
+        }
 
     }
 
@@ -108,9 +146,25 @@ function LevelOne(){
 
     }
 
+    const hiddenCount = useRef(0);
+
     function hiddeText (){
 
-        setShowText(()=>false);
+        if(hiddenCount.current === 1){
+            
+            setShowText(()=>false);
+        
+            writing.current = false;
+
+            forceText.current = 0
+
+            hiddenCount.current = 0
+
+            return false;
+
+        }
+
+        if(arrayTexts.current.length === 0) hiddenCount.current = 1;
         outputText();
 
     }

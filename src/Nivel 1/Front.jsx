@@ -34,9 +34,18 @@ function Front ({inputText, outputText, writing}){
 
       if(!writing.current){
 
-        inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.', speed: 'insta'});
-        inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.', speed: 'insta'});
-        outputText()
+        if (pc === 0) {
+          inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.', speed: 'insta'});
+          inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.', speed: 'insta'});
+          outputText();
+          setPc(1)
+        }else{
+
+          inputText({text:'— [INFO] Está bloqueda, necesito la contraseña.', speed: 'insta'})
+          outputText();
+          
+        }
+
 
       }
 
