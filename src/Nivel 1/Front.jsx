@@ -1,17 +1,46 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText}){
+function Front ({inputText, outputText, writing}){
 
     useEffect(()=>{
 
-      inputText({text:'Nojodaaaaaaaaaaaaaaa'})
-      inputText({text:'Nojodaaaaaaaaaaaaaaa'})
+      inputText({text:'— Saya: ..................'});
+      inputText({text:'— Saya: ¿Dónde estoy? ¿Por que mis senos son tan grandes? .... Tengo que llegar rápido a mi audición de canto.'});
+      inputText({text:'— [System] Hey! Busca la manera de salir de aquí lo antes posible, hay mucho que hacer, busca y recolecta cualquier cosa para avanzar.'});
 
       outputText()
 
     },[])
+
+    function onClickControl(){
+
+      inputText({text:'— [INFO] Un control de super play.', speed: 'insta'});
+      outputText()
+
+    }
+
+    function onClickAlfombra () {
+
+      inputText({text:'— [INFO] Una alfombra.', speed: 'insta'});
+      outputText()
+
+    }
+
+    const [pc, setPc] = useState(0);
+
+    function onClickComputadora(){
+
+      if(!writing.current){
+
+        inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.', speed: 'insta'});
+        inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.', speed: 'insta'});
+        outputText()
+
+      }
+
+    }
 
     return (<div className="Front">
     <svg
@@ -67,6 +96,7 @@ function Front ({inputText, outputText}){
           d="M-165.554 154.97H342.446V297.845H-165.554z"
         ></path>
         <g
+          onClick={onClickComputadora}
           id="computadora"
           stroke="none"
           strokeLinecap="round"
@@ -279,7 +309,7 @@ function Front ({inputText, outputText}){
             strokeWidth="2.646"
           ></circle>
         </g>
-        <g
+        <g onClick={onClickControl}
           id="control"
           strokeOpacity="1"
           transform="matrix(.5467 0 0 .5467 -134.554 82.177)"
@@ -365,6 +395,7 @@ function Front ({inputText, outputText}){
         </g>
         <path
           id="alfombra"
+          onClick={onClickAlfombra}
           fill="url(#linearGradient1325)"
           stroke="none"
           strokeDasharray="none"

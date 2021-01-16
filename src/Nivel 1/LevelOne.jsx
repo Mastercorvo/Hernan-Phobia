@@ -12,7 +12,7 @@ function LevelOne(){
     const view = useState(0);
     const [TEXT, setTEXT] = useState('');
     const arrayTexts = useRef([]);
-    const [writing, setWriting] = useState(false);
+    const writing = useRef(false);
 
     const currentIdText = useRef(0)
 
@@ -31,7 +31,8 @@ function LevelOne(){
         let {text, speed, wait, replace} =  COPY;
 
         if(!text) text = '';
-        if(!speed) speed = 100;
+        if(!speed) speed = 40;
+        if(speed === 'insta') speed = 0
         if(!wait) wait = 0;
         if(!replace) replace = true;
 
@@ -43,9 +44,9 @@ function LevelOne(){
 
         if(text) setShowText(()=>true);
 
-        if(text) setWriting(()=>true);
+        if(text) writing.current = true
 
-        for(let i = 0; wait/300 > i; i++){
+        for(let i = 0; (wait/300) > i; i++){
 
             setTimeout(()=>{
 
@@ -72,8 +73,6 @@ function LevelOne(){
                     if(ID === currentIdText.current){
     
                         setTEXT(v=> v+text[i]);
-        
-                        if(i === text.length - 1) setWriting(false);
 
                     }
     
@@ -82,6 +81,8 @@ function LevelOne(){
             }
 
         }
+
+        if(arrayTexts.current.length === 0) writing.current = false;
 
     }
 
@@ -110,7 +111,7 @@ function LevelOne(){
     function hiddeText (){
 
         setShowText(()=>false);
-        outputText()
+        outputText();
 
     }
 
@@ -119,7 +120,7 @@ function LevelOne(){
         <div className="arrowLeft arrow"></div>
         <div className="arrowRight arrow"></div>
 
-        <Front view={view} inputText={inputText} outputText={outputText} />
+        <Front view={view} inputText={inputText} outputText={outputText} writing={writing} />
         <Left view={view} />
         <Right view={view} />
         <Back view={view} />
