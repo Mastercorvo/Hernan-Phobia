@@ -1,0 +1,82 @@
+
+.levelOne > .text{
+
+    position: absolute;
+
+    z-index: 2000;
+
+    width: 80%;
+
+    height: 200px;
+
+    background-color: white;
+
+    bottom: 20%;
+
+    border-radius: 10px;
+
+    box-shadow: -10px 10px black;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+.levelOne > .arrow{
+
+    width: 100px;
+
+    height: 50px;
+
+    position: absolute;
+
+    z-index: 1000;
+
+    background-size: 100% 100%;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    border: 6px transparent solid;
+
+    border-radius: 4px;
+
+    background-repeat: no-repeat;
+
+}
+
+.levelOne > .arrow:hover{
+
+    transition: all 0.2s;
+
+    transform: scale(1.1);
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.levelOne > .arrow:active{
+
+    transition: all 0.1s;
+
+    transform: scale(0.9);
+
+}
+
+.levelOne > .arrowLeft{
+
+    background-image: url(./arrowLeft.svg);
+
+    left: 50px;
+
+}
+
+.levelOne > .arrowRight{
+
+    background-image: url(./arrowRightt.svg);
+
+    right: 50px;
+
+}

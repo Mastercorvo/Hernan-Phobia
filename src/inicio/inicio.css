@@ -1,0 +1,182 @@
+
+@keyframes desenfoque {
+
+    0%{
+
+        filter: blur(0);
+
+    }
+
+    50%{
+
+        filter: blur(10px);
+
+    }
+
+    100%{
+
+        filter: blur(0);
+
+    }
+
+}
+
+.title-inicio{
+
+    position: absolute;
+
+    z-index: 1000;
+
+    color: red;
+
+    font-size: 5em;
+
+    font-family: sans-serif;
+
+    top: 0;
+
+    margin: 0;
+
+    margin-top: 20px;
+
+    animation-name: desenfoque;
+
+    animation-duration: 5s;
+
+    animation-direction: alternate;
+
+    animation-iteration-count: infinite;
+
+}
+
+.menu{
+
+    background-color: black;
+
+    position: absolute;
+
+    z-index: 600;
+
+    width: 350px;
+
+    height: 500px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    left: 0;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    user-select: none;
+
+}
+
+.menu h2{
+
+    font-size: 3em;
+
+    margin: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: black;
+
+    color: white;
+
+    border-radius: 5px;
+
+}
+
+.menu p{
+
+    font-size: 2em;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    user-select: none;
+
+    cursor: pointer;
+
+    transition: all 0.1s;
+
+}
+
+.menu p:hover{
+
+    background-color: black;
+
+    color: white;
+
+    transition: all 0.15s;
+
+    padding-left: 50px;
+
+}
+
+.menu p:active{
+
+    transform: scale(0.8);
+
+    transition: all 0.05s;
+
+}
+
+.hernan{
+
+    width: 300px;
+
+    height: 500px;
+
+    background-image: url(principal.png);
+
+    background-size: 100% 100%;
+
+    position: absolute;
+
+    z-index: 500;
+
+    border-radius: 50px;
+
+    border: 3px black solid;
+
+    right: 0;
+
+    opacity: 0.95;
+
+}
+
+.casa{
+
+    background-image: url(casa.svg);
+
+    background-size: 100%;
+
+    height: 100%;
+
+    width: 100%;
+
+    left: 0;
+
+    position: absolute;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+}
