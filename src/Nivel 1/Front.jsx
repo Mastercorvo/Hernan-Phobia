@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText, writing}){
+function Front ({inputText, outputText, writing, room}){
 
     useEffect(()=>{
 
@@ -93,6 +93,8 @@ function Front ({inputText, outputText, writing}){
       }
 
     }
+
+    if(room !== 0) return false;
 
     return (<div className="Front">
     <svg

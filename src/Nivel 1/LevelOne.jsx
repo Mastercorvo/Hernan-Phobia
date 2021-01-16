@@ -22,6 +22,10 @@ function LevelOne(){
 
     const oldText = useRef('');
 
+    const [room, setRoom] = useState(0);
+
+    const [light, setLight] = useState(true);
+
     function escribir(DATA){
 
         currentIdText.current += 1;
@@ -32,7 +36,7 @@ function LevelOne(){
 
         if(!DATA) COPY = {}
 
-        let {text, speed, wait, replace} =  COPY;
+        let {text, speed, wait, replace, purgue} =  COPY;
 
         if(!text) text = '';
         if(!speed) speed = 40;
@@ -50,6 +54,8 @@ function LevelOne(){
         if(text) writing.current = true;
 
         oldText.current = text;
+
+        if(purgue) 
 
         if(speed === 'insta'){
 
@@ -98,7 +104,7 @@ function LevelOne(){
                         forceText.current = 0;
 
                         if(arrayTexts.current.length === 0) hiddenCount.current = 1;
-
+                        if(arrayTexts.current.length === 0) writing.current = false;
                     }
 
                 }, i * speed);
@@ -107,23 +113,40 @@ function LevelOne(){
 
         }
 
-        if(arrayTexts.current.length === 0) writing.current = false;
-
     }
 
-    function outputText(){
+    function outputText(purgue){
 
         if(forceText.current === 0){
 
-            const COPY = [...arrayTexts.current];
+            let COPY = [...arrayTexts.current];
     
-            const currentText = COPY.shift();
+            let currentText = COPY.shift();
+
+            if(purgue){
+                
+                COPY = [...arrayTexts.current];
+        
+                currentText = COPY.pop();
+
+                arrayTexts.current = [];
+
+            }else{
+
+                COPY = [...arrayTexts.current];
+        
+                currentText = COPY.shift();
+
+                arrayTexts.current = [...COPY];
+
+            }
+
     
-            arrayTexts.current = [...COPY];
             
             forceText.current = 1;
             
             escribir(currentText);
+
         }else{
 
             currentIdText.current += 1;
@@ -169,15 +192,19 @@ function LevelOne(){
 
     }
 
-    return (<div className="levelOne" >
+    return (<div className="levelOne" style={{filter:light?'brightness(1)':'brightness(0.4)'}} >
 
-        <div className="arrowLeft arrow"></div>
-        <div className="arrowRight arrow"></div>
+        <div className="arrowLeft arrow" onClick={()=>{setRoom(v=>((v+1) === 4)?0:v+1)}}></div>
+        <div className="arrowRight arrow" onClick={()=>{
 
-        <Front view={view} inputText={inputText} outputText={outputText} writing={writing} />
-        <Left view={view} />
-        <Right view={view} />
-        <Back view={view} />
+            setRoom(v=>((v-1) === -1)?3:v-1)}
+            
+            }></div>
+
+        <Front view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Left view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} />
+        <Right view={view} room={room} />
+        <Back view={view} room={room} />
 
         <div className="text" style={{display: showText?'block':'none'}} onClick={hiddeText}>
 

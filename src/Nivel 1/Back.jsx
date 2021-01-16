@@ -1,7 +1,9 @@
 
 import './back.css';
 
-function Back (){
+function Back ({room}){
+
+    if(room !== 2) return false;
 
     return (<div className="back">
 
