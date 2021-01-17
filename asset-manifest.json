@@ -1,28 +1,25 @@
 {
   "files": {
-    "main.css": "/Hernan-Phobia/static/css/main.288c2354.chunk.css",
-    "main.js": "/Hernan-Phobia/static/js/main.0a007675.chunk.js",
-    "main.js.map": "/Hernan-Phobia/static/js/main.0a007675.chunk.js.map",
-    "runtime-main.js": "/Hernan-Phobia/static/js/runtime-main.667e5055.js",
-    "runtime-main.js.map": "/Hernan-Phobia/static/js/runtime-main.667e5055.js.map",
-    "static/js/2.81b0428f.chunk.js": "/Hernan-Phobia/static/js/2.81b0428f.chunk.js",
-    "static/js/2.81b0428f.chunk.js.map": "/Hernan-Phobia/static/js/2.81b0428f.chunk.js.map",
-    "static/js/3.3cf549de.chunk.js": "/Hernan-Phobia/static/js/3.3cf549de.chunk.js",
-    "static/js/3.3cf549de.chunk.js.map": "/Hernan-Phobia/static/js/3.3cf549de.chunk.js.map",
+    "main.css": "/Hernan-Phobia/static/css/main.0ee72e7e.chunk.css",
+    "main.js": "/Hernan-Phobia/static/js/main.bdbe7aca.chunk.js",
+    "main.js.map": "/Hernan-Phobia/static/js/main.bdbe7aca.chunk.js.map",
+    "runtime-main.js": "/Hernan-Phobia/static/js/runtime-main.400ac630.js",
+    "runtime-main.js.map": "/Hernan-Phobia/static/js/runtime-main.400ac630.js.map",
+    "static/js/2.c8b30e88.chunk.js": "/Hernan-Phobia/static/js/2.c8b30e88.chunk.js",
+    "static/js/2.c8b30e88.chunk.js.map": "/Hernan-Phobia/static/js/2.c8b30e88.chunk.js.map",
+    "static/js/3.31dcd5b6.chunk.js": "/Hernan-Phobia/static/js/3.31dcd5b6.chunk.js",
+    "static/js/3.31dcd5b6.chunk.js.map": "/Hernan-Phobia/static/js/3.31dcd5b6.chunk.js.map",
     "index.html": "/Hernan-Phobia/index.html",
-    "static/css/main.288c2354.chunk.css.map": "/Hernan-Phobia/static/css/main.288c2354.chunk.css.map",
-    "static/js/2.81b0428f.chunk.js.LICENSE.txt": "/Hernan-Phobia/static/js/2.81b0428f.chunk.js.LICENSE.txt",
-    "static/media/GTA San Andreas Meeting Big Smoke Scene.953c42c2.mp3": "/Hernan-Phobia/static/media/GTA San Andreas Meeting Big Smoke Scene.953c42c2.mp3",
-    "static/media/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).715f86a5.mp3": "/Hernan-Phobia/static/media/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).715f86a5.mp3",
+    "static/css/main.0ee72e7e.chunk.css.map": "/Hernan-Phobia/static/css/main.0ee72e7e.chunk.css.map",
+    "static/js/2.c8b30e88.chunk.js.LICENSE.txt": "/Hernan-Phobia/static/js/2.c8b30e88.chunk.js.LICENSE.txt",
     "static/media/levelOne.css": "/Hernan-Phobia/static/media/arrowRightt.716b990c.svg",
     "static/media/inicio.css": "/Hernan-Phobia/static/media/casa.f46818ca.svg",
-    "static/media/pepe.d62bb1a0.webm": "/Hernan-Phobia/static/media/pepe.d62bb1a0.webm",
     "static/media/principal.94281cd2.png": "/Hernan-Phobia/static/media/principal.94281cd2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.667e5055.js",
-    "static/js/2.81b0428f.chunk.js",
-    "static/css/main.288c2354.chunk.css",
-    "static/js/main.0a007675.chunk.js"
+    "static/js/runtime-main.400ac630.js",
+    "static/js/2.c8b30e88.chunk.js",
+    "static/css/main.0ee72e7e.chunk.css",
+    "static/js/main.bdbe7aca.chunk.js"
   ]
 }
