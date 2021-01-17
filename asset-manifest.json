@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e11e90c3.chunk.css",
+    "main.js": "/static/js/main.30104d3c.chunk.js",
+    "main.js.map": "/static/js/main.30104d3c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e4a915ca.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e4a915ca.js.map",
+    "static/js/2.81b0428f.chunk.js": "/static/js/2.81b0428f.chunk.js",
+    "static/js/2.81b0428f.chunk.js.map": "/static/js/2.81b0428f.chunk.js.map",
+    "static/js/3.3cf549de.chunk.js": "/static/js/3.3cf549de.chunk.js",
+    "static/js/3.3cf549de.chunk.js.map": "/static/js/3.3cf549de.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e11e90c3.chunk.css.map": "/static/css/main.e11e90c3.chunk.css.map",
+    "static/js/2.81b0428f.chunk.js.LICENSE.txt": "/static/js/2.81b0428f.chunk.js.LICENSE.txt",
+    "static/media/GTA San Andreas Meeting Big Smoke Scene.953c42c2.mp3": "/static/media/GTA San Andreas Meeting Big Smoke Scene.953c42c2.mp3",
+    "static/media/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).715f86a5.mp3": "/static/media/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).715f86a5.mp3",
+    "static/media/levelOne.css": "/static/media/arrowRightt.716b990c.svg",
+    "static/media/inicio.css": "/static/media/principal.94281cd2.png",
+    "static/media/pepe.d62bb1a0.webm": "/static/media/pepe.d62bb1a0.webm"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e4a915ca.js",
+    "static/js/2.81b0428f.chunk.js",
+    "static/css/main.e11e90c3.chunk.css",
+    "static/js/main.30104d3c.chunk.js"
+  ]
+}
