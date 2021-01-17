@@ -1,29 +1,22 @@
 
 import './App.css';
 
-import Inicio from "./inicio/inicio";
+import React, { useState } from 'react';
 
-import LevelOne from "./Nivel 1/LevelOne";
-
-import { useState, Suspense } from 'react';
+import LevelOne from './Nivel 1/LevelOne';
+import Inicio from './inicio/inicio';
 
 function App() {
 
   const [start, setStart] = useState(false);
 
   return (
-    <Suspense fallback={<div className="load">
+    <div className="App">
 
-    <p>Cargando...</p>
-
-  </div>}>
-      <div className="App">
-
-        {start? <LevelOne/>:<Inicio setStart={setStart}/>}
-        
-      </div>
-    </Suspense>
-  );
+      {start? <LevelOne/>:<Inicio setStart={setStart}/>}
+      
+    </div>);
+         
 }
 
 export default App;

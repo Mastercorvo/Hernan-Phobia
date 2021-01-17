@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
+function Front ({inputText, outputText, writing, room, passwordPc, setCorneta, setReproduct}){
 
     useEffect(()=>{
 
@@ -32,7 +32,11 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
         inputText({text:'— Saya: Espera... este control es en realidad una corneta. Le pondre las baterías *Encendiendo la corneta*'});
         outputText();
 
+        setCorneta(v=>v+1);
+
       }else{
+
+        setReproduct(false)
 
         setCorneta(v=>{
 

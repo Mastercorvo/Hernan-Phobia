@@ -1,4 +1,22 @@
 
+.levelOne > .corneta{
+
+    position: absolute;
+
+    font-family: sans-serif;
+
+    user-select: none;
+
+    font-size: 5em;
+
+    font-weight: bold;
+
+    text-decoration-line: line-through;
+
+    color: red;
+
+}
+
 .levelOne > .modal{
 
     width: 100%;

@@ -1,12 +1,14 @@
 
-import { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './inicio.css';
 
-// import ReactPlayer from 'react-player'; uninstall plz
+import ReactPlayer from 'react-player';
 
 //import ReactAudioPlayer from 'react-audio-player'; uninstall plz
 
-import ThemeInicio from './sonidos/pepe.webm'
+import Hernan from "./principal-min.png"
+
+// import ThemeInicio from './sonidos/pepe.webm'
 
 function Inicio ({setStart}) {
     
@@ -18,7 +20,7 @@ function Inicio ({setStart}) {
 
     function onClickTutorial(){
 
-        alert('Solo haz click por todos lados.')
+        alert('Solo haz click por todos lados.');
 
     }
 
@@ -36,10 +38,12 @@ function Inicio ({setStart}) {
 
         </div>
 
-        <audio src={ThemeInicio} autoPlay loop/>
+        <ReactPlayer url="https://www.youtube.com/watch?v=hh2AWoQtFO81" loop={true} playing={true} width="0" height="0" ></ReactPlayer>
 
         <h1 className="title-inicio">Hernan Phobia</h1>
-        <div className="hernan"></div>
+
+        <img className="hernan" src={Hernan}/>
+
         <div className="casa"></div>
         <div className="menu">
 

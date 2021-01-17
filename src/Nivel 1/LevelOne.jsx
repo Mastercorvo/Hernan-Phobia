@@ -7,9 +7,7 @@ import Back from './Back';
 import Right from './Right';
 import { useRef, useState } from 'react';
 
-import CJ from './sonidos/GTA San Andreas Meeting Big Smoke Scene.mp3';
-
-import Voltaire from './sonidos/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).mp3';
+import ReactPlayer from 'react-player';
 
 function LevelOne(){
 
@@ -200,15 +198,25 @@ function LevelOne(){
 
     }
 
+    const [reproduct, setReproduct] = useState(false);
+
+    function firsMusic(){
+
+        setReproduct(true);
+
+    }
+
     return (<div className="levelOne" style={{filter:light?'brightness(1)':'brightness(0.4)'}} >
 
-        {(corneta === 1) && <audio src={CJ} autoPlay></audio>}
-        {(corneta === 2) && <audio src={Voltaire} autoPlay></audio>}
+        { (corneta !== 0) && <p className="corneta">{reproduct?'Reproduciendo ' + corneta:'Cargando...'}</p>}
+
+        <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/I7CuJKjIWYA" loop playing={corneta === 1}></ReactPlayer>
+        <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/DIgDJgmHkQ8?list=PLBrz0CctEXH7MGKYgcq8lFQcdMf1jmxt8" loop playing={corneta === 2}></ReactPlayer>
 
         <div className="modal" style={{display: final?'flex':'none'}}>
 
             <h2>¡Felicidades has llegado al final de esta demo!</h2>
-            <p>Si quieres más apoya al creador de este juego Jesús Corvo.</p>
+            <p>Si quieres el siguiente nivel o más de esto apoya al creador de este juego Jesús Corvo.</p>
             <a href="https://www.facebook.com/GIGA.KIWI.FRUITPALACE/">Contacta le y manden le un mensaje por facebook Aquí</a>
             <p>-Recarga la pagina para comenzar de nuevo-</p>
         </div>
@@ -220,7 +228,7 @@ function LevelOne(){
             
             }></div>
 
-        <Front setCorneta={setCorneta} view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Front setCorneta={setCorneta} setReproduct={setReproduct} view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} light={light} portalFinal={portalFinal} setFinal={setFinal}/>
         <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setPortalFinal={setPortalFinal}/>
