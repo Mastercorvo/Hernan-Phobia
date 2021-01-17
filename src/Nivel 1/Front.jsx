@@ -78,7 +78,7 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
 
       if(!writing.current){
 
-        if (pc === 0) {
+        if ((pc === 0) && !passwordPc) {
           inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.'});
           inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.'});
           outputText();
@@ -87,7 +87,7 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
 
           if(passwordPc){
 
-            inputText({text:'— Saya: Que estraño esta comptadora parace tener un virus. Solo alcanzo ver una publicación de una red social que dice "Perdi el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
+            inputText({text:'— Saya: Que estraño esta comptadora parace tener un virus. Solo alcanzo a ver una publicación de una red social que dice "Perdi el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
             outputText();
 
             return false;

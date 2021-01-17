@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './back.css';
 
-function Back ({inputText, outputText, writing, room}){
+function Back ({inputText, outputText, writing, setPortalFinal, room}){
 
     const [backBed, setBackBed] = useState(false);
 
@@ -39,8 +39,10 @@ function Back ({inputText, outputText, writing, room}){
 
       if(backBed){
 
-        inputText({text: '— Saya: Hay un papel que dice: Rapido ve y lanzate sobre el charco de agua'});
+        inputText({text: '— Saya: Hay un papel que dice: Rapido ve y lanzate sobre el charco de agua.'});
         outputText();
+
+        setPortalFinal(true);
 
       }else{
 

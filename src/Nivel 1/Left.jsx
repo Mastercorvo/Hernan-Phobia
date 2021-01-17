@@ -3,7 +3,7 @@ import './left.css';
 
 import { useState } from 'react';
 
-function Left ({inputText, outputText, writing, room, setLight, setPasswordPc}){
+function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, portalFinal, setFinal, light}){
 
     function onClickInterruptor(){
 
@@ -24,8 +24,19 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc}){
 
         if(writing.current) return false;
 
-        inputText({text:'— Saya: Esta cosa solo hace ruidos extraños.'});
-        outputText();
+        if(light){
+
+          inputText({text:'— Saya: Esta cosa solo hace ruidos extraños.'});
+          outputText();
+
+        }else{
+
+          inputText({text:'— Desconocido: Hola'});
+          inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
+          inputText({text:'— Desconocido: Sí, oye '});
+          outputText();
+
+        }
 
     }
 
@@ -42,8 +53,18 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc}){
 
         if(writing.current) return false;
 
-        inputText({text:'— Saya: La persona que vive aquí es un puerco en toda regla.'});
-        outputText();
+        if(portalFinal){
+
+          setFinal(true);
+
+          setLight(true);
+
+        }else{
+
+          inputText({text:'— Saya: La persona que vive aquí es un puerco en toda regla.'});
+          outputText();
+
+        }
 
     }
 

@@ -28,6 +28,10 @@ function LevelOne(){
 
     const [passwordPc, setPasswordPc] = useState(false);
 
+    const [portalFinal, setPortalFinal] = useState(false);
+
+    const [final, setFinal] = useState(false);
+
     function escribir(DATA){
 
         currentIdText.current += 1;
@@ -140,8 +144,6 @@ function LevelOne(){
                 arrayTexts.current = [...COPY];
 
             }
-
-    
             
             forceText.current = 1;
             
@@ -194,6 +196,14 @@ function LevelOne(){
 
     return (<div className="levelOne" style={{filter:light?'brightness(1)':'brightness(0.4)'}} >
 
+        <div className="modal" style={{display: final?'flex':'none'}}>
+
+            <h2>¡Felicidades has llegado al final de esta demo!</h2>
+            <p>Si quieres más apoya al creador de este juego Jesús Corvo.</p>
+            <a href="https://www.facebook.com/GIGA.KIWI.FRUITPALACE/">Contacta le y manden le un mensaje por facebook Aquí</a>
+            <p>-Recarga la pagina para comenzar de nuevo-</p>
+        </div>
+
         <div className="arrowLeft arrow" onClick={()=>{setRoom(v=>((v+1) === 4)?0:v+1)}}></div>
         <div className="arrowRight arrow" onClick={()=>{
 
@@ -202,9 +212,9 @@ function LevelOne(){
             }></div>
 
         <Front view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
-        <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} />
+        <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} light={light} portalFinal={portalFinal} setFinal={setFinal}/>
         <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
-        <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room}/>
+        <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setPortalFinal={setPortalFinal}/>
 
         <div className="text" style={{display: showText?'block':'none'}} onClick={hiddeText}>
 

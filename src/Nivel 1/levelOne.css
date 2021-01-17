@@ -1,4 +1,36 @@
 
+.levelOne > .modal{
+
+    width: 100%;
+
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+
+    z-index: 4000;
+
+    background-color: black;
+
+    color: rgb(0, 238, 255);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    font-size: 2em;
+
+    font-weight: bold;
+
+    font-family: sans-serif;
+
+}
+
 .levelOne > .text{
 
     user-select: none;
