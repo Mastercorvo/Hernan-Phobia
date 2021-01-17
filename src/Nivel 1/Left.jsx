@@ -73,8 +73,8 @@ function Left ({inputText, outputText, writing, room, setLight}){
             <div className="button" onClick={()=>{
                 
                 setDisplayTv(false);
-                inputText({text:'— Saya: Ya memorice la contraseña. Ahora ¿Dónde usarla? ¿Que tal en el pc? Jugador lleva me allá.'});
-                outputText();
+                inputText({text:'— Saya: Ya memorice la contraseña. Ahora ¿Dónde usarla? ¿Que tal en el pc? ¡Jugador lleva me allá!'});
+                outputText(true);
                 
                 }}>Salir</div>
             </> :<><p>Erase una vez un número  que no podía saltar, saltaba, saltaba pero no podía saltar. Un día conoció a un numero que cuando se acostaba se veía el infinito. Ambos tuvieron un hijo, su hijo se llama:</p>

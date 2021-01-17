@@ -36,7 +36,7 @@ function LevelOne(){
 
         if(!DATA) COPY = {}
 
-        let {text, speed, wait, replace, purgue} =  COPY;
+        let {text, speed, wait, replace} =  COPY;
 
         if(!text) text = '';
         if(!speed) speed = 40;
@@ -54,8 +54,6 @@ function LevelOne(){
         if(text) writing.current = true;
 
         oldText.current = text;
-
-        if(purgue) 
 
         if(speed === 'insta'){
 
