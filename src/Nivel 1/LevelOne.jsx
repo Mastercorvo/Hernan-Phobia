@@ -26,6 +26,8 @@ function LevelOne(){
 
     const [light, setLight] = useState(true);
 
+    const [passwordPc, setPasswordPc] = useState(false);
+
     function escribir(DATA){
 
         currentIdText.current += 1;
@@ -199,8 +201,8 @@ function LevelOne(){
             
             }></div>
 
-        <Front view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
-        <Left view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} />
+        <Front view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} />
         <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room}/>
 

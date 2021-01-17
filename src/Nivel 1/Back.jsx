@@ -4,11 +4,13 @@ import './back.css';
 
 function Back ({inputText, outputText, writing, room}){
 
+    const [backBed, setBackBed] = useState(false);
+
     function onClickPortal(){
 
       if(writing.current) return false;
 
-      inputText({text: '— Saya: Parece ser un portal a otra dimensión. Que rico huele allí.'});
+      inputText({text: '— Saya: Parece ser un portal a otra dimensión. Sale un rico olor a perfume de allí.'});
       outputText();
 
     }
@@ -34,10 +36,19 @@ function Back ({inputText, outputText, writing, room}){
     function onClickCamaDetras(){
       
       if(writing.current) return false;
-      
-      inputText({text: '— Saya: Realmente es una cama muy mal hecha.'});
-      outputText();
 
+      if(backBed){
+
+        inputText({text: '— Saya: Hay un papel que dice: Rapido ve y lanzate sobre el charco de agua'});
+        outputText();
+
+      }else{
+
+        inputText({text: '— Saya: Realmente es una cama muy mal hecha.'});
+        outputText();
+
+      }
+      
     }
 
     function onClickBaul(){
@@ -56,6 +67,8 @@ function Back ({inputText, outputText, writing, room}){
       if(value === 'ILoveYordleGirls'){
 
         setBlock(true);
+
+        setBackBed(true);
 
       }
 

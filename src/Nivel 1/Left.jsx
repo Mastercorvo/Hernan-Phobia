@@ -3,7 +3,7 @@ import './left.css';
 
 import { useState } from 'react';
 
-function Left ({inputText, outputText, writing, room, setLight}){
+function Left ({inputText, outputText, writing, room, setLight, setPasswordPc}){
 
     function onClickInterruptor(){
 
@@ -15,7 +15,7 @@ function Left ({inputText, outputText, writing, room, setLight}){
 
         if(writing.current) return false;
 
-        inputText({text:'Esta puerta está cerrada con llave.'});
+        inputText({text:'— Saya: Esta puerta está cerrada con llave.'});
         outputText();
 
     }
@@ -59,7 +59,13 @@ function Left ({inputText, outputText, writing, room, setLight}){
 
     function inputOnChange(text){
 
-        if(text.target.value === '16') setTvCondition(true);
+        if(text.target.value === '16') {
+          
+          setTvCondition(true);
+
+          setPasswordPc(true);
+
+        }
 
     }
 

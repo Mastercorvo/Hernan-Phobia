@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText, writing, room}){
+function Front ({inputText, outputText, writing, room, passwordPc}){
 
     useEffect(()=>{
 
@@ -84,6 +84,15 @@ function Front ({inputText, outputText, writing, room}){
           outputText();
           setPc(1)
         }else{
+
+          if(passwordPc){
+
+            inputText({text:'— Saya: Que estraño esta comptadora parace tener un virus. Solo alcanzo ver una publicación de una red social que dice "Perdi el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
+            outputText();
+
+            return false;
+
+          }
 
           inputText({text:'— [INFO] Está bloqueda, necesito la contraseña.', speed: 'insta'})
           outputText();
