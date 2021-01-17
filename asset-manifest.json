@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Hernan-Phobia/static/css/main.0ee72e7e.chunk.css",
-    "main.js": "/Hernan-Phobia/static/js/main.fff3f1d3.chunk.js",
-    "main.js.map": "/Hernan-Phobia/static/js/main.fff3f1d3.chunk.js.map",
+    "main.js": "/Hernan-Phobia/static/js/main.9ce1aa11.chunk.js",
+    "main.js.map": "/Hernan-Phobia/static/js/main.9ce1aa11.chunk.js.map",
     "runtime-main.js": "/Hernan-Phobia/static/js/runtime-main.400ac630.js",
     "runtime-main.js.map": "/Hernan-Phobia/static/js/runtime-main.400ac630.js.map",
     "static/js/2.c8b30e88.chunk.js": "/Hernan-Phobia/static/js/2.c8b30e88.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.400ac630.js",
     "static/js/2.c8b30e88.chunk.js",
     "static/css/main.0ee72e7e.chunk.css",
-    "static/js/main.fff3f1d3.chunk.js"
+    "static/js/main.9ce1aa11.chunk.js"
   ]
 }
