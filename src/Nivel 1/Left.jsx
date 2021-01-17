@@ -15,7 +15,7 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
 
         if(writing.current) return false;
 
-        inputText({text:'— Saya: Esta puerta está cerrada con llave.'});
+        inputText({text:'— Saya: Esta puerta está cerrada con llave.'});
         outputText();
 
     }
@@ -40,13 +40,13 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
   
           }else{
   
-            inputText({text:'— Desconocido: Hola.'});
-            inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
-            inputText({text:'— Desconocido: Sí cuando la luz no me adormece,oye llevo mucho tiempo con esta forma extraña, no es la mía ¿Sabes algún conjuro para revertir esto?'});
-            inputText({text:'— Saya: No sé de magia perdón y a todo esto ¿Quien eres?'});
-            inputText({text:'— Kazoni: Soy Kazoni y no debería estar aquí, fui traído. Hernan haces estas cosas amenudo pero ahora creo que hay algo que no lo sacia. Esto no es normal y.... ¡HA! haaaa... Te hablo luego.'});
-            inputText({text:'— Saya: ¿Qué? Hola, hola... No entiendo nada.'});
-            outputText();
+            inputText({text:'— Desconocido: Hola.'});
+            inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
+            inputText({text:'— Desconocido: Sí cuando la luz no me adormece,oye llevo mucho tiempo con esta forma extraña, no es la mía ¿Sabes algún conjuro para revertir esto?'});
+            inputText({text:'— Saya: No sé de magia perdón y a todo esto ¿Quien eres?'});
+            inputText({text:'— Kazoni: Soy Kazoni y no debería estar aquí, fui traído. Hernan haces estas cosas amenudo pero ahora creo que hay algo que no lo sacia. Esto no es normal y.... ¡HA! haaaa... Te hablo luego.'});
+            inputText({text:'— Saya: ¿Qué? Hola, hola... No entiendo nada.'});
+            outputText();
   
             setKazoni(true);
 
@@ -120,7 +120,7 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
                 outputText(true);
                 
                 }}>Salir</div>
-            </> :<><p>Érase una vez un número que no podía saltar, saltaba, saltaba, pero no podía saltar. Un día conoció a un número que cuando se acostaba se veía el infinito. Ambos tuvieron un hijo, su hijo se llama:</p>
+            </> :<><p>Érase una vez un número que no podía saltar, saltaba, saltaba, pero no podía saltar. Un día conoció a un número que cuando se acostaba se veía el infinito. Ambos tuvieron un hijo, su hijo se llama:</p>
 
             <input type="text" onChange={inputOnChange}/>
             <div className="button1" onClick={()=>setDisplayTv(false)}>Salir</div>

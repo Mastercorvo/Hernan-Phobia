@@ -131,7 +131,7 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta, s
 
           if(passwordPc){
 
-            inputText({text:'— Saya: *Desbloquea la computadora* Que extraño esta compradora parece tener un virus. Solo alcanzo a ver una publicación de una red social que dice "Perdí el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
+            inputText({text:'— Saya: *Desbloquea la computadora* Que extraño esta compradora parece tener un virus Solo alcanzo a ver una publicación de una red social que dice "Perdí el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'});
             outputText();
 
             return false;
