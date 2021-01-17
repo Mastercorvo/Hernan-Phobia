@@ -7,6 +7,10 @@ import Back from './Back';
 import Right from './Right';
 import { useRef, useState } from 'react';
 
+import CJ from './sonidos/GTA San Andreas Meeting Big Smoke Scene.mp3';
+
+import Voltaire from './sonidos/Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics).mp3';
+
 function LevelOne(){
 
     const view = useState(0);
@@ -31,6 +35,8 @@ function LevelOne(){
     const [portalFinal, setPortalFinal] = useState(false);
 
     const [final, setFinal] = useState(false);
+
+    const [corneta, setCorneta] = useState(0);
 
     function escribir(DATA){
 
@@ -196,6 +202,9 @@ function LevelOne(){
 
     return (<div className="levelOne" style={{filter:light?'brightness(1)':'brightness(0.4)'}} >
 
+        {(corneta === 1) && <audio src={CJ} autoPlay></audio>}
+        {(corneta === 2) && <audio src={Voltaire} autoPlay></audio>}
+
         <div className="modal" style={{display: final?'flex':'none'}}>
 
             <h2>¡Felicidades has llegado al final de esta demo!</h2>
@@ -211,7 +220,7 @@ function LevelOne(){
             
             }></div>
 
-        <Front view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Front setCorneta={setCorneta} view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} light={light} portalFinal={portalFinal} setFinal={setFinal}/>
         <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setPortalFinal={setPortalFinal}/>

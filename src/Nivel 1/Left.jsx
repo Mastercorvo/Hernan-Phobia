@@ -42,9 +42,9 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
   
             inputText({text:'— Desconocido: Hola'});
             inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
-            inputText({text:'— Desconocido: Sí oye llevo mucho tiempo con esta forma extraña ¿Sabes algún conjuro para revertir esto?'});
+            inputText({text:'— Desconocido: Sí cuando la luz no me adormece,oye llevo mucho tiempo con esta forma extraña, no es la mía ¿Sabes algún conjuro para revertir esto?'});
             inputText({text:'— Saya: No sé de magia perdón y a todo esto ¿Quien eres?'});
-            inputText({text:'— Kazoni: Soy Kazoni y no debería estar aquí, fui traído. Hernan haces estas cosas amenudo pero ahora creo que ahora hay algo que no lo sacia. Esto no es normal y.... ¡HA! haaaa... Te hablo luego.'});
+            inputText({text:'— Kazoni: Soy Kazoni y no debería estar aquí, fui traído. Hernan haces estas cosas amenudo pero ahora creo que hay algo que no lo sacia. Esto no es normal y.... ¡HA! haaaa... Te hablo luego.'});
             inputText({text:'— Saya: ¿Qué? Hola, hola... No entiendo nada.'});
             outputText();
   

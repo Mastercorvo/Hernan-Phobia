@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText, writing, room, passwordPc}){
+function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
 
     useEffect(()=>{
 
@@ -10,16 +10,38 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
       inputText({text:'— Saya: ¿Dónde estoy? ¿Por que mis senos son tan grandes? .... Tengo que llegar rápido a mi audición de canto.'});
       inputText({text:'— [System] Hey! Busca la manera de salir de aquí lo antes posible, hay mucho que hacer, busca y recolecta cualquier cosa para avanzar.'});
 
-      outputText()
+      outputText();
 
-    },[])
+    },[]);
+
+    const [cajon3Count, setCajon3Count] = useState(0);
 
     function onClickControl(){
 
       if(writing.current) return false;
 
-      inputText({text:'— [INFO] Un control de super play.', speed: 'insta'});
-      outputText()
+      if(cajon3Count < 4){
+
+        inputText({text:'— [INFO] Un control de super play.', speed: 'insta'});
+        outputText();
+
+      }else if(cajon3Count === 5){
+
+        setCajon3Count(6)
+
+        inputText({text:'— Saya: Espera... este control es en realidad una corneta. Le pondre las baterias *Encendiendo la corneta*'});
+        outputText();
+
+      }else{
+
+        setCorneta(v=>{
+
+          if((v+1) === 3) return 0;
+            else return v+1; 
+
+        })
+
+      }
 
     }
 
@@ -49,8 +71,9 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
 
       if(!llave1.current){
 
-        inputText({text:'— [INFO] Este cajón tiene una llave.'});
-        inputText({text:'*Llave obtenida*'});
+        inputText({text:'— [INFO] Este cajón tiene un papel.'});
+        inputText({text:'— [INFO] Dice: 5 veces tocar lo que curiosidad te da.'});
+        inputText({text:'— Saya: Eso es muy general ¿Qué crees que sea jugador?'});
         outputText();
         llave1.current = true;
 
@@ -67,8 +90,25 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
 
       if(writing.current) return false;
 
-      inputText({text:'— [INFO] Este cajón es algo peculiar.'});
-      outputText()
+      if(cajon3Count < 4){
+
+        inputText({text:'— [INFO] Este cajón es algo peculiar.'});
+        setCajon3Count(v=>v+1);
+        outputText();
+
+      }else if(cajon3Count === 4){
+
+        inputText({text:'— [INFO] El cajón se ha abierto. Tiene dentro unas baterías.'});
+        inputText({text:'— [INFO] *Baterías Obtenidas*'});
+        setCajon3Count(v=>v+1);
+        outputText();
+
+      }else{
+
+        inputText({text:'— [INFO] Este cajón está vacio.'});
+        outputText();
+
+      }
 
     }
 
