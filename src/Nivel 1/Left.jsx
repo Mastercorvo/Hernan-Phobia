@@ -40,7 +40,7 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
   
           }else{
   
-            inputText({text:'— Desconocido: Hola'});
+            inputText({text:'— Desconocido: Hola.'});
             inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
             inputText({text:'— Desconocido: Sí cuando la luz no me adormece,oye llevo mucho tiempo con esta forma extraña, no es la mía ¿Sabes algún conjuro para revertir esto?'});
             inputText({text:'— Saya: No sé de magia perdón y a todo esto ¿Quien eres?'});
@@ -60,7 +60,7 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
 
         if(writing.current) return false;
 
-        inputText({text:'— Saya: Huele realemnte horrible, pero nuca he olido algo así.', speed:'insta'});
+        inputText({text:'— Saya: Huele realemnte horrible, pero nunca he olido algo así.', speed:'insta'});
         outputText();
 
     }
@@ -116,11 +116,11 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
             <div className="button" onClick={()=>{
                 
                 setDisplayTv(false);
-                inputText({text:'— Saya: Ya memorice la contraseña. Ahora ¿Dónde usarla? ¿Que tal en el pc? ¡Jugador lleva me allá!'});
+                inputText({text:'— Saya: Ya memorice la contraseña. Ahora ¿Dónde usarla? ¿Que tal en el pc? ¡Jugador llevame allá!'});
                 outputText(true);
                 
                 }}>Salir</div>
-            </> :<><p>Erase una vez un número  que no podía saltar, saltaba, saltaba pero no podía saltar. Un día conoció a un numero que cuando se acostaba se veía el infinito. Ambos tuvieron un hijo, su hijo se llama:</p>
+            </> :<><p>Érase una vez un número que no podía saltar, saltaba, saltaba, pero no podía saltar. Un día conoció a un número que cuando se acostaba se veía el infinito. Ambos tuvieron un hijo, su hijo se llama:</p>
 
             <input type="text" onChange={inputOnChange}/>
             <div className="button1" onClick={()=>setDisplayTv(false)}>Salir</div>

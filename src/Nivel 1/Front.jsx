@@ -29,7 +29,7 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
 
         setCajon3Count(6)
 
-        inputText({text:'— Saya: Espera... este control es en realidad una corneta. Le pondre las baterias *Encendiendo la corneta*'});
+        inputText({text:'— Saya: Espera... este control es en realidad una corneta. Le pondre las baterías *Encendiendo la corneta*'});
         outputText();
 
       }else{
@@ -105,7 +105,7 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
 
       }else{
 
-        inputText({text:'— [INFO] Este cajón está vacio.'});
+        inputText({text:'— [INFO] Este cajón está vacio.', speed:'insta'});
         outputText();
 
       }
@@ -120,14 +120,14 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta}){
 
         if ((pc === 0) && !passwordPc) {
           inputText({text:'— Saya: Esta pc está bloqueda y huele feo.'});
-          inputText({text:'— Saya: Me seria muy útil saber la hora para saber si aun me queda tiempo.'});
+          inputText({text:'— Saya: Me seria muy útil ver la hora para saber si aun me queda tiempo.'});
           outputText();
           setPc(1)
         }else{
 
           if(passwordPc){
 
-            inputText({text:'— Saya: Que estraño esta comptadora parace tener un virus. Solo alcanzo a ver una publicación de una red social que dice "Perdi el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
+            inputText({text:'— Saya: *Desbloquea la computadora* Que extraño esta compradora parece tener un virus. Solo alcanzo a ver una publicación de una red social que dice "Perdí el reto así que tomen: ILoveYordleGirls" y no puedo mover el cursor ni hacer nada.'})
             outputText();
 
             return false;

@@ -19,7 +19,7 @@ function Back ({inputText, outputText, writing, setPortalFinal, room}){
 
       if(writing.current) return false;
 
-      inputText({text: '— Saya: Creo a ver visto ese póster antes. Es de una religión Creo que hacian rituales eróticos con elfas.'});
+      inputText({text: '— Saya: Creo a ver visto ese póster antes. Es de una religión. Creo que hacian rituales eróticos con elfas.'});
       outputText();
 
     }
@@ -40,6 +40,7 @@ function Back ({inputText, outputText, writing, setPortalFinal, room}){
       if(backBed){
 
         inputText({text: '— Saya: Hay un papel que dice: Rapido ve y lanzate sobre el charco de agua.'});
+        inputText({text: '— Saya: Creo que sé quien es esta persona. Espero que esto no sea una broma.'});
         outputText();
 
         setPortalFinal(true);
@@ -83,11 +84,11 @@ function Back ({inputText, outputText, writing, setPortalFinal, room}){
 
         {block?<>
         
-            <h2>Hola, llegas tarde. Por favor, Revisa bien detras de la cama >:(</h2>
+            <h2>¿Qué estas haciendo ahí? Llegas tarde. Por favor, Revisa bien detrás de la cama >:(</h2>
             <div className="button" onClick={()=>setShowBaul(false)}>Salir</div>
 
         </>:<>
-          <h2>Contraseña del baul</h2>
+          <h2>Contraseña del baúl</h2>
 
           <input type="text" onChange={passOnChanges}/>
 

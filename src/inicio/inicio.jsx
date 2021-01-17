@@ -27,12 +27,12 @@ function Inicio ({setStart}) {
     return (<div className="Inicio">
 
         <div className="credits" style={{display:startCredits?'flex':'none'}} onClick={()=>setStartCredits(false)}>
-            <p>Musica del menu: Amnesia:A Machine for Pigs Main Theme</p>
-            <p>Musicas de la radio:</p> <p>GTA San Andreas: Meeting Big Smoke Scene</p><p> Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics) <br/> [Esta música es por diversión]</p>
-            <p>Tecnologias usadas: ReactJs, Javascript, Css, Html5.</p>
+            <p>Música del menú: Amnesia:A Machine for Pigs Main Theme</p>
+            <p>Músicas de la radio:</p> <p>GTA San Andreas: Meeting Big Smoke Scene</p><p> Sellout by Aurelio Voltaire (OFFICIAL Radio Edit with Lyrics) <br/> [Esta música es por diversión]</p>
+            <p>Tecnologías usadas: ReactJs, Javascript, Css, Html5.</p>
             <p>El resto fue hecho por Jesús Corvo ;)</p>
-            <a href="https://www.facebook.com/GIGA.KIWI.FRUITPALACE/">Apoyalo mandandole un mensaje aquí</a>
-            <p>salir</p>
+            <a href="https://www.facebook.com/GIGA.KIWI.FRUITPALACE/">Apoya lo mandando le un mensaje aquí</a>
+            <p>Salir</p>
 
         </div>
 
@@ -45,9 +45,9 @@ function Inicio ({setStart}) {
 
             <h2>Menu</h2>
 
-            <p onClick={onClickPlay}>Jugar</p>
-            <p onClick={onClickTutorial}>Tutorial</p>
-            <p onClick={()=>setStartCredits(true)}>Creditos</p>
+            <p onMouseDown={onClickPlay}>Jugar</p>
+            <p onMouseDown={onClickTutorial}>Tutorial</p>
+            <p onMouseDown={()=>setStartCredits(true)}>Creditos</p>
 
         </div>
 
