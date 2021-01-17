@@ -26,3 +26,21 @@
     align-items: center;
 
 }
+
+.load{
+
+    position: absolute;
+
+    z-index: 3000;
+
+    background-color: black;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 5em;
+
+    font-family: sans-serif;
+
+}
