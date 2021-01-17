@@ -1,11 +1,84 @@
 
+import { useState } from 'react';
 import './back.css';
 
-function Back ({room}){
+function Back ({inputText, outputText, writing, room}){
+
+    function onClickPortal(){
+
+      if(writing.current) return false;
+
+      inputText({text: '— Saya: Parece ser un portal a otra dimensión. Que rico huele allí.'});
+      outputText();
+
+    }
+
+    function onClickPoster(){
+
+      if(writing.current) return false;
+
+      inputText({text: '— Saya: Creo a ver visto ese póster antes. Es de una religión Creo que hacian rituales eróticos con elfas.'});
+      outputText();
+
+    }
+
+    function onClickCamaFrontal(){
+
+      if(writing.current) return false;
+
+      inputText({text: '— Saya: Que pésimo diseño de cama.'});
+      outputText();
+      
+    }
+    
+    function onClickCamaDetras(){
+      
+      if(writing.current) return false;
+      
+      inputText({text: '— Saya: Realmente es una cama muy mal hecha.'});
+      outputText();
+
+    }
+
+    function onClickBaul(){
+
+      setShowBaul(true);
+
+    }
+
+    const [showBaul, setShowBaul] = useState(false);
+    const [block, setBlock] = useState(false);
+
+    function passOnChanges(event){
+
+      const value = event.target.value;
+
+      if(value === 'ILoveYordleGirls'){
+
+        setBlock(true);
+
+      }
+
+    }
 
     if(room !== 2) return false;
 
     return (<div className="Back">
+      <div className="modal" style={{display: showBaul ?'flex':'none'}}>
+
+        {block?<>
+        
+            <h2>Hola, llegas tarde. Por favor, Revisa bien detras de la cama >:(</h2>
+            <div className="button" onClick={()=>setShowBaul(false)}>Salir</div>
+
+        </>:<>
+          <h2>Contraseña del baul</h2>
+
+          <input type="text" onChange={passOnChanges}/>
+
+          <div className="button" onClick={()=>setShowBaul(false)}>Salir</div></>}
+
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -187,6 +260,7 @@ function Back ({room}){
           ></path>
           <g
             id="camaDetras"
+            onClick={onClickCamaDetras}
             fill="#875700"
             fillOpacity="1"
             stroke="none"
@@ -229,7 +303,7 @@ function Back ({room}){
               transform="rotate(90)"
             ></rect>
           </g>
-          <g id="camaFrontal" fillOpacity="1" stroke="none" strokeOpacity="1">
+          <g id="camaFrontal" fillOpacity="1" stroke="none" strokeOpacity="1" onClick={onClickCamaFrontal}>
             <path
               id="rect1715-0"
               fill="#fff"
@@ -315,6 +389,7 @@ function Back ({room}){
             strokeMiterlimit="4"
             strokeOpacity="1"
             transform="matrix(.6 0 0 .6 83.114 63.518)"
+            onClick={onClickBaul}
           >
             <rect
               id="rect1878"
@@ -366,7 +441,8 @@ function Back ({room}){
             </g>
           </g>
           <g
-            id="cartel"
+            id="poster"
+            onClick={onClickPoster}
             strokeDasharray="none"
             strokeMiterlimit="4"
             strokeOpacity="1"
@@ -423,6 +499,7 @@ function Back ({room}){
           </g>
           <g
             id="portal"
+            onClick={onClickPortal}
             fillOpacity="1"
             stroke="none"
             strokeDasharray="none"

@@ -201,8 +201,8 @@ function LevelOne(){
 
         <Front view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Left view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} />
-        <Right view={view} room={room} />
-        <Back view={view} room={room} />
+        <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room}/>
 
         <div className="text" style={{display: showText?'block':'none'}} onClick={hiddeText}>
 

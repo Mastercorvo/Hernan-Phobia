@@ -1,7 +1,46 @@
 
+import { useRef } from 'react';
 import './right.css';
 
-function Right ({room}){
+function Right ({inputText, outputText, writing, room}){
+
+    function onClickVentana(){
+
+      if(writing.current) return false;
+
+      inputText({text:'— Saya: Parece que realmente este no es mi mundo.'});
+      outputText();
+      
+    }
+
+    const talked = useRef(false);
+
+    function onClickCloset(){
+
+      if(writing.current) return false;
+
+        if(talked.current){
+
+          inputText({text:'— Saya: ¿¡Estas ahí!? ¿¡Hola!? ¿¡Hola!? ...... Parece que se murio o algo.'});
+
+        }else{
+
+          inputText({text:'— Desconocida: ¡Hola! ¡¡HOLA!! ¿¡Hay alguien ahí!?'});
+          inputText({text:'— Saya: Sí ¿Quien eres?'});
+          inputText({text:'— Nazty: soy Nazty. Sacame de aquí por favor.'});
+          inputText({text:'— Saya: Está bloqueada con llave. Buscare la forma de abrirlo solo espera.'});
+          inputText({text:'— Nazty: ¡Oye! Yo te conozco eres Saya la que jugaba con libros de magia ¿No?'});
+          inputText({text:'— Saya: Espera creo recordar...... No, no lo recuerdo. De hecho no recuerdo nada.'});
+          inputText({text:'— Nazty: El Nakrost debe tener tu......... ¡HAAAA! ¡ESPERA! *Parece estrangulada* [Voz de estrangulada] ... Yo no la conozco lo jugo ¡¡HAAAaaaa!!'});
+          inputText({text:'— Saya: ¿¡QUE PASA AHÍ DENTRO!? ¡HOLAAA! ¡Hola! ..... Demonios ¿Que está pasando? Será mejor que busque algunas respuestas.' });
+  
+          talked.current = true;
+
+        }
+
+      outputText();
+
+    }
 
     if(room !== 3) return false;
 
@@ -41,6 +80,7 @@ function Right ({room}){
           ></path>
           <g
             id="closet"
+            onClick={onClickCloset}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeMiterlimit="4"
@@ -136,6 +176,7 @@ function Right ({room}){
           </g>
           <g
             id="ventana"
+            onClick={onClickVentana}
             strokeMiterlimit="4"
             strokeOpacity="1"
             transform="matrix(.80362 0 0 .80362 187.496 174.24)"
