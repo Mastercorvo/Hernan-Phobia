@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './front.css';
 
-function Front ({inputText, outputText, writing, room, passwordPc, setCorneta, setReproduct}){
+function Front ({inputText, outputText, writing, room, passwordPc, setCorneta, setReproduct, reproduct, corneta}){
 
     useEffect(()=>{
 
@@ -36,14 +36,18 @@ function Front ({inputText, outputText, writing, room, passwordPc, setCorneta, s
 
       }else{
 
-        setReproduct(false)
+        if(reproduct || (corneta === 0)){
 
-        setCorneta(v=>{
+          setReproduct(false);
+  
+          setCorneta(v=>{
+  
+            if((v+1) === 3) return 0;
+              else return v+1; 
+  
+          })
 
-          if((v+1) === 3) return 0;
-            else return v+1; 
-
-        })
+        }
 
       }
 

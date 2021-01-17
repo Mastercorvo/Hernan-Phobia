@@ -208,10 +208,10 @@ function LevelOne(){
 
     return (<div className="levelOne" style={{filter:light?'brightness(1)':'brightness(0.4)'}} >
 
-        { (corneta !== 0) && <p className="corneta">{reproduct?'Reproduciendo ' + corneta:'Cargando...'}</p>}
+        {(corneta !== 0) && <p className="corneta">{reproduct?'Reproduciendo ' + corneta:'Cargando...'}</p>}
 
-        <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/I7CuJKjIWYA" loop playing={corneta === 1}></ReactPlayer>
-        <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/DIgDJgmHkQ8?list=PLBrz0CctEXH7MGKYgcq8lFQcdMf1jmxt8" loop playing={corneta === 2}></ReactPlayer>
+        {(corneta === 1) && <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/I7CuJKjIWYA" loop playing={corneta === 1}></ReactPlayer>}
+        {(corneta === 2) && <ReactPlayer onStart={firsMusic} width="0" height="0" url="https://youtu.be/DIgDJgmHkQ8?list=PLBrz0CctEXH7MGKYgcq8lFQcdMf1jmxt8" loop playing={corneta === 2} ></ReactPlayer>}
 
         <div className="modal" style={{display: final?'flex':'none'}}>
 
@@ -226,9 +226,9 @@ function LevelOne(){
 
             setRoom(v=>((v-1) === -1)?3:v-1)}
             
-            }></div>
+        }></div>
 
-        <Front setCorneta={setCorneta} setReproduct={setReproduct} view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
+        <Front setCorneta={setCorneta} setReproduct={setReproduct} corneta={corneta} reproduct={reproduct} view={view} passwordPc={passwordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Left view={view} setPasswordPc={setPasswordPc} inputText={inputText} outputText={outputText} writing={writing} room={room} setLight={setLight} light={light} portalFinal={portalFinal} setFinal={setFinal}/>
         <Right view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} />
         <Back view={view} inputText={inputText} outputText={outputText} writing={writing} room={room} setPortalFinal={setPortalFinal}/>
