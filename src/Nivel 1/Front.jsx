@@ -79,8 +79,8 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
       if(!writing.current){
 
         if ((pc === 0) && !passwordPc) {
-          inputText({text:'— [INFO] Esta pc está bloqueda y huele feo.'});
-          inputText({text:'— [INFO] Me seria muy útil saber la hora para saber si aun me queda tiempo.'});
+          inputText({text:'— Saya: Esta pc está bloqueda y huele feo.'});
+          inputText({text:'— Saya: Me seria muy útil saber la hora para saber si aun me queda tiempo.'});
           outputText();
           setPc(1)
         }else{
@@ -94,7 +94,7 @@ function Front ({inputText, outputText, writing, room, passwordPc}){
 
           }
 
-          inputText({text:'— [INFO] Está bloqueda, necesito la contraseña.', speed: 'insta'})
+          inputText({text:'— Saya: Está bloqueda, necesito la contraseña.', speed: 'insta'})
           outputText();
           
         }

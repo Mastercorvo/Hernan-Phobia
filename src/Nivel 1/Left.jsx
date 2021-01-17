@@ -20,22 +20,38 @@ function Left ({inputText, outputText, writing, room, setLight, setPasswordPc, p
 
     }
 
+    const [kazoni, setKazoni] = useState(false)
+
     function onClickKazoni(){
 
         if(writing.current) return false;
 
-        if(light){
+        if(kazoni && !light){
 
-          inputText({text:'— Saya: Esta cosa solo hace ruidos extraños.'});
+          inputText({text:'— Saya: Hola, hola.... no responde.'});
           outputText();
 
         }else{
 
-          inputText({text:'— Desconocido: Hola'});
-          inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
-          inputText({text:'— Desconocido: Sí, oye '});
-          outputText();
+          if(light){
+  
+            inputText({text:'— Saya: Esta cosa solo hace ruidos extraños.'});
+            outputText();
+  
+          }else{
+  
+            inputText({text:'— Desconocido: Hola'});
+            inputText({text:'— Saya: ¡Aah! ¿Hablas?'});
+            inputText({text:'— Desconocido: Sí oye llevo mucho tiempo con esta forma extraña ¿Sabes algún conjuro para revertir esto?'});
+            inputText({text:'— Saya: No sé de magia perdón y a todo esto ¿Quien eres?'});
+            inputText({text:'— Kazoni: Soy Kazoni y no debería estar aquí, fui traído. Hernan haces estas cosas amenudo pero ahora creo que ahora hay algo que no lo sacia. Esto no es normal y.... ¡HA! haaaa... Te hablo luego.'});
+            inputText({text:'— Saya: ¿Qué? Hola, hola... No entiendo nada.'});
+            outputText();
+  
+            setKazoni(true);
 
+          }
+          
         }
 
     }

@@ -27,11 +27,12 @@ function Right ({inputText, outputText, writing, room}){
 
           inputText({text:'— Desconocida: ¡Hola! ¡¡HOLA!! ¿¡Hay alguien ahí!?'});
           inputText({text:'— Saya: Sí ¿Quien eres?'});
-          inputText({text:'— Nazty: soy Nazty. Sacame de aquí por favor.'});
+          inputText({text:'— Nazty: Soy Nazty. Sacame de aquí por favor.'});
           inputText({text:'— Saya: Está bloqueada con llave. Buscare la forma de abrirlo solo espera.'});
           inputText({text:'— Nazty: ¡Oye! Yo te conozco eres Saya la que jugaba con libros de magia ¿No?'});
           inputText({text:'— Saya: Espera creo recordar...... No, no lo recuerdo. De hecho no recuerdo nada.'});
-          inputText({text:'— Nazty: El Nakrost debe tener tu......... ¡HAAAA! ¡ESPERA! *Parece estrangulada* [Voz de estrangulada] ... Yo no la conozco lo jugo ¡¡HAAAaaaa!!'});
+          inputText({text:'— Nazty: El Nakrost debe tener tu......... ¡HAAAA! ¡ESPERA! *Parece estrangulada*'});
+          inputText({text:'— Nazty: [Voz de estrangulada] ... Yo no la conozco lo juro ¡¡HAAAaaaa!!', speed: 200});
           inputText({text:'— Saya: ¿¡QUE PASA AHÍ DENTRO!? ¡HOLAAA! ¡Hola! ..... Demonios ¿Que está pasando? Será mejor que busque algunas respuestas.' });
   
           talked.current = true;
